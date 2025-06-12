@@ -1,76 +1,90 @@
 #include <stdio.h>
 
-int main () {
+int main() {
     // Carta 1
-    char Estado1;
-    char Codigo1 [04];
-    char NomedaCidade1 [50];
-    int Populacao1;
-    float AreaKM1; 
-    float PIB1;
-    int PontosTuristicos1;
+    char estado1;
+    char codigo1[4];
+    char nomeCidade1[100];
+    int populacao1;
+    float area1, pib1;
+    int pontosTuristicos1;
+    float densidade1, pibPerCapita1;
 
     // Carta 2
-    char Estado2;
-    char Codigo2 [04];
-    char NomedaCidade2 [50];
-    int Populacao2;
-    float AreaKM2; 
-    float PIB2;
-    int PontosTuristicos2;
+    char estado2;
+    char codigo2[4];
+    char nomeCidade2[100];
+    int populacao2;
+    float area2, pib2;
+    int pontosTuristicos2;
+    float densidade2, pibPerCapita2;
 
- // Leitura da Carta 1
-    printf("Cadastro da Carta 1: ");
+    // Entrada dos dados da Carta 1
+    printf("Digite os dados da Carta 1:\n");
+    printf("Estado (A-H)): ");
+    scanf(" %c", &estado1);
+    printf("Código da Carta (Letra seguida de numero de 01 a 04): ");
+    scanf("%s", codigo1);
+    printf("Nome da Cidade: ");
+    scanf(" %[^\n]", nomeCidade1);
+    printf("População: ");
+    scanf("%d", &populacao1);
+    printf("Área (em km²): ");
+    scanf("%f", &area1);
+    printf("PIB (em bilhões de reais): ");
+    scanf("%f", &pib1);
+    printf("Número de Pontos Turísticos: ");
+    scanf("%d", &pontosTuristicos1);
 
-    printf("Digite o Estado (Letra de A a H): ");
-    scanf("%c", &Estado1); // Exibe valores inseridos no campo Estado
+    // Cálculo da Carta 1
+    densidade1 = populacao1 / area1;
+    pibPerCapita1 = (pib1 * 1000000000) / populacao1;
 
-    printf("Digite o Código (Letra seguida de numero de 01 a 04): ");
-    scanf("%s", Codigo1); // Exibe valores inseridos no campo Código
+    // Exibição dos dados da Carta 1
+    printf("\nCarta 1:\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Nome da Cidade: %s\n", nomeCidade1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("Número de Pontos Turísticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
-    printf("Digite o Nome da Cidade: ");
-    scanf(" %[^\n]", NomedaCidade1);; // Lê nome completo com espaços
+    // Entrada dos dados da Carta 2
+    printf("\nDigite os dados da Carta 2:\n");
+    printf("Estado (A-H): ");
+    scanf(" %c", &estado2);
+    printf("Código da Carta (Letra seguida de numero de 01 a 04): ");
+    scanf("%s", codigo2);
+    printf("Nome da Cidade: ");
+    scanf(" %[^\n]", nomeCidade2);
+    printf("População: ");
+    scanf("%d", &populacao2);
+    printf("Área (em km²): ");
+    scanf("%f", &area2);
+    printf("PIB (em bilhões de reais): ");
+    scanf("%f", &pib2);
+    printf("Número de Pontos Turísticos: ");
+    scanf("%d", &pontosTuristicos2);
 
-    printf("Digite a quantidade de população da Cidade: ");
-    scanf("%d", &Populacao1); // Exibe valores inseridos no campo Populacao
+    // Cálculo da Carta 2
+    densidade2 = populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000) / populacao2;
 
-    printf("Digite a área da cidade em KM²: ");
-    scanf("%f", &AreaKM1); // Exibe valores inseridos no campo Area KM
 
-    printf("Digite o PIB da cidade em bilhoes de reais: ");
-    scanf("%f", &PIB1); // Exibe valores inseridos no campo PIB
+    // Exibição dos dados da Carta 2
+    printf("\nCarta 2:\n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Nome da Cidade: %s\n", nomeCidade2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
-    printf("Digite o número de ponto turístico da cidade: ");
-    scanf("%d", &PontosTuristicos1); // Exibe valores inseridos no campo Ponto Turistico
-
-    printf("\n");
-
- // Leitura da Carta 2
-    printf("Cadastro da Carta 2: ");
-
-    printf("Digite o Estado (Letra de A a H): \n");
-    scanf("%c", &Estado2); // Exibe valores inseridos no campo Estado
-
-    printf("Digite o Código da Cidade (Letra seguida de numero de 01 a 04): ");
-    scanf("%s", Codigo2); // Exibe valores inseridos no campo Código
-
-    printf("Digite o Nome da Cidade: ");
-    scanf(" %[^\n]", NomedaCidade2);; // Lê nome completo com espaços
-
-    printf("Digite a quantidade de população da Cidade: ");
-    scanf("%d", &Populacao2); // Exibe valores inseridos no campo Populacao
-
-    printf("Digite a área da cidade em KM²: ");
-    scanf("%f", &AreaKM2); // Exibe valores inseridos no campo Area KM
-
-    printf("Digite o PIB da cidade em bilhoes de reais: ");
-    scanf("%f", &PIB2); // Exibe valores inseridos no campo PIB
-
-    printf("Digite o número de ponto turístico da cidade: ");
-    scanf("%d", &PontosTuristicos2); // Exibe valores inseridos no campo Ponto Turistico
-
-    printf("\n");
-
-return 0;
-    
+    return 0;
 }
